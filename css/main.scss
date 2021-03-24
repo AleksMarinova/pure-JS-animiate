@@ -1,0 +1,74 @@
+body{
+    margin:0;
+    height:100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img{
+    width:100%;
+    visibility: hidden;
+    position: absolute;
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+    transition: clip-path 1s;
+}
+
+.container{
+    display:flex;
+    margin:5em 0 5em 5em;
+    position:relative;
+
+}
+
+section{
+    width:800px;
+    position: absolute;
+    right: 10em;
+}
+
+nav {
+    margin-right: 4em;
+    position:fixed;
+    width:800px;
+    text-align: left;
+}
+
+ul{
+    list-style-type: none;
+    width:10em;
+
+    li{
+        text-transform: uppercase;
+        padding:.8em 0 .8em .8em;
+        cursor: pointer;
+        border-radius: 84% 16% 53% 47% / 83% 44% 56% 17%;
+        position: relative;
+        transition:border-radius 1s;
+
+        &:before{
+            position: absolute;
+            content: "";
+            width:0;
+            border-bottom: 2px solid black;
+            top:1.45em;
+            transition: width 1s;
+        }
+
+        &:hover{
+
+            border: 1px solid gray;
+            border-radius: 84% 16% 91% 9% / 30% 30% 70% 70%;
+
+            &:before{
+                width:80%;
+            }
+
+        }
+
+        
+    }
+}
+
+.intro{
+    visibility:visible;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}

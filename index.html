@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Interactivity with JS</title>
+</head>
+<body>
+     <div class="container">
+         <nav>
+             <ul>
+                 <li>Mountain</li>
+                 <li>Sunset</li>
+                 <li>Forest</li>
+                 <li>Black and white</li>
+                 <li>River</li>
+             </ul>
+         </nav>
+         <section>
+             <img src="img/one.jpg" alt="">
+             <img src="img/two.jpg" alt="">
+             <img src="img/three.jpg" alt="">
+             <img src="img/four.jpg" alt="">
+             <img src="img/five.jpg" alt="">
+         </section>
+     </div>
+
+    <script>
+      const listItems=document.querySelectorAll("li");
+            photos=document.querySelectorAll("img");
+
+      listItems.forEach((li, i)=>{
+          li.addEventListener("mouseenter", ()=>{
+              
+              photos[i].classList.add("intro");
+          })
+
+          li.addEventListener("mouseleave", ()=>{
+              
+              photos[i].classList.remove("intro");
+          })
+
+          li.addEventListener("mousemove", (e)=>{
+              photos[i].style.left = -e.clientX * .5+"px";
+              photos[i].style.top = -e.clientY * .5+100+"px";
+
+          })
+
+
+      })
+
+
+    </script>
+</body>
+</html>
